@@ -215,8 +215,8 @@ Canvas:
   m_GameObject: {fileID: 305860761}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 393424729}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -1603,7 +1603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2097,6 +2097,7 @@ GameObject:
   - component: {fileID: 1557729379}
   - component: {fileID: 1557729378}
   - component: {fileID: 1557729377}
+  - component: {fileID: 1557729382}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2175,6 +2176,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 1557729372}
   - {fileID: 1557729381}
+  - {fileID: 1557729382}
   - {fileID: 1557729380}
   - {fileID: 1557729379}
   - {fileID: 1557729378}
@@ -2206,7 +2208,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1557729374}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1557729379}
   variables: []
   description: 
   stepPause: 0
@@ -2261,7 +2264,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 385366516}
 --- !u!114 &1557729378
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2279,7 +2282,7 @@ MonoBehaviour:
   storyText: "\u041F\u0440\u043E\u0439\u0434\u044F \u043C\u0438\u043C\u043E \u0434\u0435\u0442\u0441\u043A\u043E\u0439
     \u043F\u043B\u043E\u0449\u0430\u0434\u043A\u0438, \u044F \u0437\u0430\u043C\u0435\u0442\u0438\u043B
     \u0434\u0435\u0432\u043E\u0447\u043A\u0443, \u0432 \u043E\u0434\u0438\u043D\u043E\u0447\u0435\u0441\u0442\u0432\u0435
-    \u043A\u0430\u0447\u0430\u044E\u0449\u0443\u044E\u0441\u044F \u043D\u0430 \u043A\u0430\u0447\u0435\u043B\u044F\u0445"
+    \u043A\u0430\u0447\u0430\u044E\u0449\u0443\u044E\u0441\u044F \u043D\u0430 \u043A\u0430\u0447\u0435\u043B\u044F\u0445."
   description: 
   character: {fileID: 1592112536}
   portrait: {fileID: 0}
@@ -2291,7 +2294,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 385366516}
 --- !u!114 &1557729379
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2311,7 +2314,7 @@ MonoBehaviour:
     \u0432 \u043E\u043A\u043D\u043E \u0438 \u0436\u0434\u0435\u0442 \u043C\u0435\u043D\u044F..."
   description: 
   character: {fileID: 1917581695}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 01546faa1ce3b75429a9c29d2dd87287, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2320,7 +2323,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 305860762}
 --- !u!114 &1557729380
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2337,10 +2340,10 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "\u041C\u0430\u043C\u0430 \u0441\u043D\u043E\u0432\u0430 \u0431\u0443\u0434\u0435\u0442
     \u0440\u0443\u0433\u0430\u0442\u044C\u0441\u044F \u0438\u0437-\u0437\u0430 \u0442\u043E\u0433\u043E,
-    \u0447\u0442\u043E \u044F \u043F\u043E\u0437\u0434\u043D\u043E \u0432\u0435\u0440\u043D\u0443\u043B\u0441\u044F"
+    \u0447\u0442\u043E \u044F \u043F\u043E\u0437\u0434\u043D\u043E \u0432\u0435\u0440\u043D\u0443\u043B\u0441\u044F."
   description: 
   character: {fileID: 1917581695}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 01546faa1ce3b75429a9c29d2dd87287, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2349,7 +2352,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 305860762}
 --- !u!114 &1557729381
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2364,10 +2367,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: "\u041F\u0440\u043E\u0445\u043B\u0430\u0434\u043D\u043E... \u041F\u043E\u0434\u0443\u043C\u0430\u043B
-    \u044F"
+  storyText: "\u041F\u0440\u043E\u0445\u043B\u0430\u0434\u043D\u043E... "
   description: 
   character: {fileID: 1917581695}
+  portrait: {fileID: 21300000, guid: 01546faa1ce3b75429a9c29d2dd87287, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 305860762}
+--- !u!114 &1557729382
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557729371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 7
+  indentLevel: 0
+  storyText: "\u041F\u043E\u0434\u0443\u043C\u0430\u043B \u044F"
+  description: 
+  character: {fileID: 1592112536}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2377,7 +2406,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 385366516}
 --- !u!1 &1592112535
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,8 +2437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: "\u041B\u0435\u0439\u043D"
-  nameColor: {r: 0.764151, g: 0.2991723, b: 0.2991723, a: 1}
+  nameText: ' '
+  nameColor: {r: 0, g: 0, b: 0, a: 1}
   soundEffect: {fileID: 0}
   portraits: []
   portraitsFace: 0
@@ -2575,7 +2604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25882354, g: 0.25490198, b: 0.2627451, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2583,7 +2612,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: bb145366ce7024469a5758b08d31802c, type: 3}
+    m_Font: {fileID: 12800000, guid: 79197ecfbc3a4294a89ce589dac02cf2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -2757,7 +2786,8 @@ MonoBehaviour:
   nameText: "\u041B\u0435\u0439\u043D"
   nameColor: {r: 0.03773582, g: 0.0008899956, b: 0.0008899956, a: 1}
   soundEffect: {fileID: 0}
-  portraits: []
+  portraits:
+  - {fileID: 21300000, guid: 01546faa1ce3b75429a9c29d2dd87287, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 305860762}
   description: 
