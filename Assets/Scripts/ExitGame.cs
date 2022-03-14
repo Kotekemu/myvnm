@@ -8,5 +8,8 @@ public class ExitGame : MonoBehaviour
     {
         Application.Quit();
     }
-
+    public void AboutUs()
+    {
+        Application.OpenURL("https://vk.com/1rgt1"); 
+    }
 }
