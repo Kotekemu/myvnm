@@ -2,3 +2,9 @@
 /obj
 /Logs
 /Library
+/builds
+/Temp
+/.git
+/.vs
+*.csproj
+*.sln
