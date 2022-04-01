@@ -75,6 +75,7 @@
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+    <Compile Include="Assets\Scripts\Integration\VKManager.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\WaypointProgressTracker.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Assets\Chapter 01\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\FPSCounter.cs" />
+    <Compile Include="Assets\Scripts\ColorBlink.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Chapter 01\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
