@@ -105,6 +105,7 @@
     <Compile Include="Assets\Chapter 01\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\FPSCounter.cs" />
+    <Compile Include="Assets\Scripts\PauseGame.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Chapter 01\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
