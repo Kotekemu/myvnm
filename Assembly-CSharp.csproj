@@ -63,6 +63,7 @@
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\LerpControlledBob.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\PlatformSpecificContent.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <Compile Include="Assets\Scripts\OptionMenu.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\SmoothFollow.cs" />
     <Compile Include="Assets\Scripts\ColorBlink.cs" />
@@ -106,7 +107,7 @@
     <Compile Include="Assets\Chapter 01\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\FPSCounter.cs" />
-    <Compile Include="Assets\Scripts\OptionMenu.cs" />
+    <Compile Include="Assets\Scripts\MyMenu.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Chapter 01\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />

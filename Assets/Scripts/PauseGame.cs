@@ -2,33 +2,28 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    [SerializeField] GameObject Menu;
 
     void FixedUpdate()
     {
-
-    if (GameIsPaused)
+        if (Menu.activeSelf){
+            Pause();
+        } else
         {
             Resume();
         }
-    else
-        {
-            Pause();
-        }
-        
+
     }
     public void Resume()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
     }
 
     void Pause()
     {
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
     }
 
     public void LoadMenu()

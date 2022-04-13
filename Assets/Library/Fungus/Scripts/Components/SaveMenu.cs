@@ -47,8 +47,6 @@ namespace Fungus
         [Tooltip("The button which restarts the game.")]
         [SerializeField] protected Button restartButton;
 
-        [Tooltip("A scrollable text field used for debugging the save data. The text field should be disabled in normal use.")]
-        [SerializeField] protected ScrollRect debugView;
 
         protected static bool saveMenuActive = false;
 
@@ -116,10 +114,13 @@ namespace Fungus
             // Hide the Save and Load buttons if autosave is on
 
             bool showSaveAndLoad = !autoSave;
-            if (saveButton.IsActive() != showSaveAndLoad)
+            if (saveButton != null)
             {
-                saveButton.gameObject.SetActive(showSaveAndLoad);
-                loadButton.gameObject.SetActive(showSaveAndLoad);
+                if (saveButton.IsActive() != showSaveAndLoad)
+                {
+                    saveButton.gameObject.SetActive(showSaveAndLoad);
+                    loadButton.gameObject.SetActive(showSaveAndLoad);
+                }
             }
  
             if (showSaveAndLoad)
@@ -149,14 +150,6 @@ namespace Fungus
                 forwardButton.interactable = saveManager.NumRewoundSavePoints > 0 && saveMenuActive;
             }
 
-            if (debugView.enabled)
-            {
-                var debugText = debugView.GetComponentInChildren<Text>();
-                if (debugText != null)
-                {
-                    debugText.text = saveManager.GetDebugInfo();
-                }
-            }
 
         }
 
