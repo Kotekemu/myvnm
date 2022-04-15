@@ -29,6 +29,9 @@ namespace Fungus
         /// </summary
         public virtual void Encode(List<SaveDataItem> saveDataItems)
         {
+
+            Debug.Log("Encode saved data");
+
             for (int i = 0; i < flowcharts.Count; i++)
             {
                 var flowchart = flowcharts[i];
@@ -47,6 +50,7 @@ namespace Fungus
         /// </summary>
         public virtual void Decode(List<SaveDataItem> saveDataItems)
         {
+            Debug.Log("Decode saved data");
             for (int i = 0; i < saveDataItems.Count; i++)
             {
                 var saveDataItem = saveDataItems[i];

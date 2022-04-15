@@ -25,7 +25,7 @@ public class ColorBlink : MonoBehaviour
     }
     void Update()
     {
-        _time += Time.deltaTime * _step * 0.22f;
+        _time += Time.deltaTime * _step * 0.44f;
         Color _newColor = Color.Lerp(_startColor, _endColor, _time);
         if (_newColor == _endColor && _step == 1)
         {

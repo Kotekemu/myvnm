@@ -4,6 +4,13 @@ public class PauseGame : MonoBehaviour
 {
     [SerializeField] GameObject Menu;
 
+
+    private void Start()
+    {
+        Time.timeScale = 1f;
+        Debug.Log(Time.timeScale);
+    }
+
     void FixedUpdate()
     {
         if (Menu.activeSelf){
