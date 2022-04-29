@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Fungus;
 
@@ -9,20 +8,7 @@ public class MySaveMenu : MonoBehaviour
 
     [SerializeField] protected bool loadOnStart = true;
 
-    [SerializeField] protected bool autoSave = false;
-
-    [SerializeField] protected bool restartDeletesSave = false;
-
-    [SerializeField] protected Button saveButton;
-
     SaveManager saveManager;
-
-
-    protected static bool saveMenuActive = false;
-
-    // protected LTDescr fadeTween;
-
-    // protected static MySaveMenu instance;
 
     protected static bool hasLoadedOnStart = false;
 
@@ -49,11 +35,8 @@ public class MySaveMenu : MonoBehaviour
 
     }
 
-    protected virtual void Start()
+    private void Start()
     {
-
-
-        // Make a note of the current scene. This will be used when restarting the game.
         if (string.IsNullOrEmpty(saveManager.StartScene))
         {
             saveManager.StartScene = SceneManager.GetActiveScene().name;
@@ -66,30 +49,6 @@ public class MySaveMenu : MonoBehaviour
             if (saveManager.SaveDataExists(saveDataKey))
             {
                 saveManager.Load(saveDataKey);
-            }
-        }
-    }
-
-    protected virtual void Update()
-    {
-
-        // Hide the Save and Load buttons if autosave is on
-
-        bool showSaveAndLoad = !autoSave;
-        if (saveButton != null)
-        {
-            if (saveButton.IsActive() != showSaveAndLoad)
-            {
-                saveButton.gameObject.SetActive(showSaveAndLoad);
-
-            }
-        }
-
-        if (showSaveAndLoad)
-        {
-            if (saveButton != null)
-            {
-                saveButton.interactable = saveManager.NumSavePoints > 0 && saveMenuActive;
             }
         }
     }
@@ -118,11 +77,9 @@ public class MySaveMenu : MonoBehaviour
     protected virtual void OnSavePointAdded(string savePointKey, string savePointDescription)
     {
 
-        if (autoSave &&
-            saveManager.NumSavePoints > 0)
+        if (saveManager.NumSavePoints > 0)
         {
             saveManager.Save(saveDataKey);
-            Debug.Log("AutoSave is done");
         }
     }
 

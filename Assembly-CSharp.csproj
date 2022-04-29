@@ -79,6 +79,7 @@
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+    <Compile Include="Assets\Scripts\AutoSave.cs" />
     <Compile Include="Assets\Scripts\Integration\VKManager.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\WaypointProgressTracker.cs" />
@@ -93,11 +94,11 @@
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\ObjectResetter.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
-    <Compile Include="Assets\Scripts\Cube.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\AutoMoveAndRotate.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\FOVKick.cs" />
-    <Compile Include="Assets\Scripts\ExitGame.cs" />
+    <Compile Include="Assets\Scripts\MySaveMenu.cs" />
+    <Compile Include="Assets\Scripts\Helpers.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
     <Compile Include="Assets\Chapter 01\Standard Assets\Utility\EventSystemChecker.cs" />

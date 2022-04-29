@@ -8,7 +8,6 @@ public class PauseGame : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-        Debug.Log(Time.timeScale);
     }
 
     void FixedUpdate()
@@ -23,13 +22,11 @@ public class PauseGame : MonoBehaviour
     }
     public void Resume()
     {
-        //gameObject.SetActive(false);
         Time.timeScale = 1f;
     }
 
     void Pause()
     {
-        //gameObject.SetActive(true);
         Time.timeScale = 0f;
     }
 

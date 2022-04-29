@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class ColorBlink : MonoBehaviour
 {
     Text _text;
-    float _color;
     float _step;
     float _time;
     
@@ -13,14 +12,12 @@ public class ColorBlink : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(message: "Start");
+
     }
     private void Awake()
     {
-        Debug.Log(message: "Awake");
         _text = GetComponent<Text>();
         _step = 1;
-        _color = 89;
         _time = 0;
     }
     void Update()
