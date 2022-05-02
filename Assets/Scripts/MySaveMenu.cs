@@ -5,34 +5,17 @@ using Fungus;
 public class MySaveMenu : MonoBehaviour
 {
     [SerializeField] protected string saveDataKey = FungusConstants.DefaultSaveDataKey;
-
     [SerializeField] protected bool loadOnStart = true;
 
     SaveManager saveManager;
-
+    private Variable _step;
+    [SerializeField] private string StartSaveKeyPoint = string.Empty;
     protected static bool hasLoadedOnStart = false;
-
+   
     protected virtual void Awake()
     {
         saveManager = FungusManager.Instance.SaveManager;
-        /*
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-        if (transform.parent == null)
-        {
-            GameObject.DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Debug.LogError("Save Menu cannot be preserved across scene loads if it is a child of another GameObject.");
-        }
-        */
-
+        _step = FungusManager.Instance.GlobalVariables.GetOrAddVariable("Step", 0, typeof(IntegerVariable));
     }
 
     private void Start()
@@ -57,40 +40,42 @@ public class MySaveMenu : MonoBehaviour
     {
         SaveManagerSignals.OnSavePointAdded += OnSavePointAdded;
         BlockSignals.OnCommandExecute += BlockSignals_OnCommandExecute;
-    }
-
-    private void BlockSignals_OnCommandExecute(Block block, Command command, int commandIndex, int maxCommandIndex)
-    {
-        if (command is Say)
-        {
-            // saveManager.AddSavePoint(saveDataKey, ""); //
-            // Debug.Log("AutoSave is done"); //
-        }
+        SaveManagerSignals.OnSavePointLoaded += SaveManagerSignalsOnOnSavePointLoaded;
     }
 
     protected virtual void OnDisable()
     {
         SaveManagerSignals.OnSavePointAdded -= OnSavePointAdded;
         BlockSignals.OnCommandExecute -= BlockSignals_OnCommandExecute;
+        SaveManagerSignals.OnSavePointLoaded -= SaveManagerSignalsOnOnSavePointLoaded;
     }
 
+    private void SaveManagerSignalsOnOnSavePointLoaded(string savepointkey)
+    {
+        StartSaveKeyPoint = savepointkey;
+    }
+
+    
     protected virtual void OnSavePointAdded(string savePointKey, string savePointDescription)
     {
-
         if (saveManager.NumSavePoints > 0)
         {
             saveManager.Save(saveDataKey);
         }
     }
 
-    public virtual string SaveDataKey { get { return saveDataKey; } }
-
-    public virtual void Save()
+    private void BlockSignals_OnCommandExecute(Block block, Command command, int commandIndex, int maxCommandIndex)
     {
-
-        if (saveManager.NumSavePoints > 0)
+        if (command is Say)
         {
-            saveManager.Save(saveDataKey);
+            _step.Apply(SetOperator.Assign, commandIndex);
+            saveManager.AddSavePoint(StartSaveKeyPoint, "Auto Save");
+            Debug.Log("AutoSave is done: " + commandIndex); //
+        } else if (command is SavePoint)
+        {
+            StartSaveKeyPoint = ((SavePoint) command).SavePointKey;
         }
     }
+    
+    
 }
