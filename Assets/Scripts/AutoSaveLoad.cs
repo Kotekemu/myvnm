@@ -1,6 +1,6 @@
 ﻿using Fungus;
 
-[CommandInfo("Flow", "AutoSave Load", "Ato Load after save")]
+[CommandInfo("Flow", "AutoSave Load", "Auto Load after save")]
 public class AutoSaveLoad : Command
 {
     private Variable _step;

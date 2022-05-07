@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Fungus;
@@ -9,7 +10,7 @@ public class MySaveMenu : MonoBehaviour
 
     SaveManager saveManager;
     private Variable _step;
-    [SerializeField] private string StartSaveKeyPoint = string.Empty;
+    private string StartSaveKeyPoint = string.Empty;
     protected static bool hasLoadedOnStart = false;
    
     protected virtual void Awake()
@@ -40,17 +41,24 @@ public class MySaveMenu : MonoBehaviour
     {
         SaveManagerSignals.OnSavePointAdded += OnSavePointAdded;
         BlockSignals.OnCommandExecute += BlockSignals_OnCommandExecute;
-        SaveManagerSignals.OnSavePointLoaded += SaveManagerSignalsOnOnSavePointLoaded;
+        SaveManagerSignals.OnSavePointLoaded += SaveManagerSignals_OnSavePointLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     protected virtual void OnDisable()
     {
         SaveManagerSignals.OnSavePointAdded -= OnSavePointAdded;
         BlockSignals.OnCommandExecute -= BlockSignals_OnCommandExecute;
-        SaveManagerSignals.OnSavePointLoaded -= SaveManagerSignalsOnOnSavePointLoaded;
+        SaveManagerSignals.OnSavePointLoaded -= SaveManagerSignals_OnSavePointLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private void SaveManagerSignalsOnOnSavePointLoaded(string savepointkey)
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        //_step.Apply(SetOperator.Assign, 0);
+    }
+    
+    private void SaveManagerSignals_OnSavePointLoaded(string savepointkey)
     {
         StartSaveKeyPoint = savepointkey;
     }
