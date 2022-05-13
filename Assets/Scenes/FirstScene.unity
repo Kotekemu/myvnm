@@ -8611,12 +8611,12 @@ GameObject:
   - component: {fileID: 1557729426}
   - component: {fileID: 1557729373}
   - component: {fileID: 1557729435}
-  - component: {fileID: 1557729440}
-  - component: {fileID: 1557729439}
-  - component: {fileID: 1557729438}
   - component: {fileID: 1557729437}
   - component: {fileID: 1557729436}
   - component: {fileID: 1557729434}
+  - component: {fileID: 1557729440}
+  - component: {fileID: 1557729438}
+  - component: {fileID: 1557729439}
   m_Layer: 0
   m_Name: Scene
   m_TagString: Untagged
@@ -9780,7 +9780,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 1557729438}
+  - {fileID: 1557729439}
   - {fileID: 1557729437}
   - {fileID: 1557729466}
   - {fileID: 1557729425}
@@ -9826,10 +9826,10 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 1557729439}
+  - {fileID: 1557729438}
   - {fileID: 1557729436}
-  - {fileID: 1557729416}
   - {fileID: 1557729465}
+  - {fileID: 1557729416}
   - {fileID: 1557729415}
   - {fileID: 1557729410}
   - {fileID: 1557729433}
@@ -10522,10 +10522,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1557729371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b115619cb83b4d6ab8047d0e9407403, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c71fdd87214472ead032d37c5451d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 133
+  itemId: 138
   indentLevel: 0
   isStartPoint: 0
   keyMode: 0
@@ -10544,10 +10544,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1557729371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b115619cb83b4d6ab8047d0e9407403, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c71fdd87214472ead032d37c5451d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 132
+  itemId: 139
   indentLevel: 0
   isStartPoint: 0
   keyMode: 0
@@ -10566,10 +10566,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1557729371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b115619cb83b4d6ab8047d0e9407403, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c71fdd87214472ead032d37c5451d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 131
+  itemId: 137
   indentLevel: 0
   isStartPoint: 1
   keyMode: 0
@@ -12872,7 +12872,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveDataKey: save_data
   loadOnStart: 1
-  StartSaveKeyPoint: 
 --- !u!4 &1981874755
 Transform:
   m_ObjectHideFlags: 0
