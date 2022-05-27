@@ -584,8 +584,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 307807036}
   m_HandleRect: {fileID: 644561211}
   m_Direction: 0
-  m_MinValue: 0.0001
-  m_MaxValue: 1
+  m_MinValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -3951,7 +3951,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 40
-    width: 100
+    width: 109.34065
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4095,7 +4095,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 126.59338
     y: 119.40109
-    width: 160
+    width: 150
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4158,7 +4158,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 260
     y: 60
-    width: 100
+    width: 95.05494
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
