@@ -45,7 +45,6 @@ public class MusicSettings : MonoBehaviour
 
     public void SetVolume(float sliderValue)
     {
-        Debug.Log(sliderValue);
         var v = -80 + Mathf.Log10(sliderValue) * 100; //хитрая формула... можно менять. 
         FungusPrefs.SetFloat(0,"Volume", v); // устанавливаем на стороне пользователя новые настройки 
         audioMixer.SetFloat("volume", v); //настраиваем микшер
