@@ -6,50 +6,23 @@ public class MySaveMenu : MonoBehaviour
 {
     [SerializeField] protected string saveDataKey = FungusConstants.DefaultSaveDataKey;
 
-    [SerializeField] protected bool loadOnStart = true;
-
     SaveManager saveManager;
-
-    protected static bool hasLoadedOnStart = false;
-
+    private Variable _blockStep;
+    private Variable _blockName;
+   
     protected virtual void Awake()
     {
         saveManager = FungusManager.Instance.SaveManager;
-        /*
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-        if (transform.parent == null)
-        {
-            GameObject.DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Debug.LogError("Save Menu cannot be preserved across scene loads if it is a child of another GameObject.");
-        }
-        */
-
     }
 
     private void Start()
     {
+        _blockStep = FungusManager.Instance.GlobalVariables.GetOrAddVariable("BlockStep", 0, typeof(IntegerVariable));
+        _blockName = FungusManager.Instance.GlobalVariables.GetOrAddVariable("BlockName", "", typeof(StringVariable));        
+        
         if (string.IsNullOrEmpty(saveManager.StartScene))
         {
             saveManager.StartScene = SceneManager.GetActiveScene().name;
-        }
-
-        if (loadOnStart && !hasLoadedOnStart)
-        {
-            hasLoadedOnStart = true;
-
-            if (saveManager.SaveDataExists(saveDataKey))
-            {
-                saveManager.Load(saveDataKey);
-            }
         }
     }
 
@@ -59,38 +32,32 @@ public class MySaveMenu : MonoBehaviour
         BlockSignals.OnCommandExecute += BlockSignals_OnCommandExecute;
     }
 
-    private void BlockSignals_OnCommandExecute(Block block, Command command, int commandIndex, int maxCommandIndex)
-    {
-        if (command is Say)
-        {
-            // saveManager.AddSavePoint(saveDataKey, ""); //
-            // Debug.Log("AutoSave is done"); //
-        }
-    }
-
     protected virtual void OnDisable()
     {
         SaveManagerSignals.OnSavePointAdded -= OnSavePointAdded;
         BlockSignals.OnCommandExecute -= BlockSignals_OnCommandExecute;
     }
-
+   
     protected virtual void OnSavePointAdded(string savePointKey, string savePointDescription)
     {
-
         if (saveManager.NumSavePoints > 0)
         {
             saveManager.Save(saveDataKey);
         }
     }
 
-    public virtual string SaveDataKey { get { return saveDataKey; } }
-
-    public virtual void Save()
+    private void BlockSignals_OnCommandExecute(Block block, Command command, int commandIndex, int maxCommandIndex)
     {
-
-        if (saveManager.NumSavePoints > 0)
+        switch (command)
         {
-            saveManager.Save(saveDataKey);
+            case Say _:
+                _blockStep.Apply(SetOperator.Assign, commandIndex);
+                _blockName.Apply(SetOperator.Assign, block.BlockName);
+                saveManager.AddSavePoint(block.BlockName, "Auto Save");
+                Debug.Log("AutoSave is done: " + commandIndex + " : " + _blockName); //
+                break;
         }
     }
+    
+    
 }

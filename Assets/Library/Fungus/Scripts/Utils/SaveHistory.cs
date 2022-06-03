@@ -22,7 +22,7 @@ namespace Fungus
 
         [SerializeField] protected int version = SaveDataVersion;
 
-        [SerializeField] protected List<string> savePoints = new List<string>();
+        [SerializeField] public List<string> savePoints = new List<string>();
 
         [SerializeField] protected List<string> rewoundSavePoints = new List<string>();
 
