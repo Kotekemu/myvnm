@@ -29,13 +29,13 @@ public class MySaveMenu : MonoBehaviour
     protected virtual void OnEnable()
     {
         SaveManagerSignals.OnSavePointAdded += OnSavePointAdded;
-        BlockSignals.OnCommandExecute += BlockSignals_OnCommandExecute;
+        //BlockSignals.OnCommandExecute += BlockSignals_OnCommandExecute;
     }
 
     protected virtual void OnDisable()
     {
         SaveManagerSignals.OnSavePointAdded -= OnSavePointAdded;
-        BlockSignals.OnCommandExecute -= BlockSignals_OnCommandExecute;
+        //BlockSignals.OnCommandExecute -= BlockSignals_OnCommandExecute;
     }
    
     protected virtual void OnSavePointAdded(string savePointKey, string savePointDescription)
