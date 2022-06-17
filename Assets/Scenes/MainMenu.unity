@@ -1088,11 +1088,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: fd9e28b29ab5e85478e6d577cc912cfe, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b578ac980f3c7884493e2079f47493d7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 36d3d659fd20b4f40948b864bfd550f8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4372,7 +4372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 82.58838, y: 90.11397}
+  scrollPos: {x: 235.33574, y: 37.36677}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -4383,7 +4383,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 1918351098}
   selectedCommands: []
   variables:
   - {fileID: 1918351108}
